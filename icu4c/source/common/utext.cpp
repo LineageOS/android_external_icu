@@ -691,8 +691,17 @@ utext_close(UText *ut) {
     return ut;
 }
 
+#ifdef ICU_COMPAT_SYMBOLS
+U_CAPI UText * U_EXPORT2
+utext_close_48(UText *ut) {
+    return utext_close(ut);
+}
 
-
+U_CAPI UText * U_EXPORT2
+utext_close_51(UText *ut) {
+    return utext_close(ut);
+}
+#endif
 
 //
 // invalidateChunk   Reset a chunk to have no contents, so that the next call
@@ -2606,6 +2615,17 @@ utext_openUChars(UText *ut, const UChar *s, int64_t length, UErrorCode *status) 
     return ut;
 }
 
+#ifdef ICU_COMPAT_SYMBOLS
+U_CAPI UText * U_EXPORT2
+utext_openUChars_48(UText *ut, const UChar *s, int64_t length, UErrorCode *status) {
+    return utext_openUChars(ut, s, length, status);
+}
+
+U_CAPI UText * U_EXPORT2
+utext_openUChars_51(UText *ut, const UChar *s, int64_t length, UErrorCode *status) {
+    return utext_openUChars(ut, s, length, status);
+}
+#endif
 
 //------------------------------------------------------------------------------
 //

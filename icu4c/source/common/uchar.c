@@ -489,6 +489,18 @@ u_digit(UChar32 ch, int8_t radix) {
     return (int8_t)((value<radix) ? value : -1);
 }
 
+#ifdef ICU_COMPAT_SYMBOLS
+U_CAPI int32_t U_EXPORT2
+u_digit_48(UChar32 ch, int8_t radix) {
+    return u_digit(ch, radix);
+}
+
+U_CAPI int32_t U_EXPORT2
+u_digit_51(UChar32 ch, int8_t radix) {
+    return u_digit(ch, radix);
+}
+#endif
+
 U_CAPI UChar32 U_EXPORT2
 u_forDigit(int32_t digit, int8_t radix) {
     if((uint8_t)(radix-2)>(36-2) || (uint32_t)digit>=(uint32_t)radix) {

@@ -137,6 +137,10 @@ local_cflags += -DU_COMMON_IMPLEMENTATION
 
 local_cflags += -O3 -fvisibility=hidden
 
+ifeq ($(TARGET_USES_ICU_COMPAT_SYMBOLS),true)
+local_cflags += -DICU_COMPAT_SYMBOLS
+endif
+
 #
 # Build for the target (device).
 #
