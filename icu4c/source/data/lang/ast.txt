@@ -1,0 +1,696 @@
+﻿// ***************************************************************************
+// *
+// * Copyright (C) 2015 International Business Machines
+// * Corporation and others. All Rights Reserved.
+// * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
+// * Source File: <path>/common/main/ast.xml
+// *
+// ***************************************************************************
+ast{
+    Keys{
+        calendar{"calendariu"}
+        collation{"orde de clasificación"}
+        currency{"moneda"}
+        numbers{"númberos"}
+    }
+    Languages{
+        aa{"afar"}
+        ab{"abkhazianu"}
+        ace{"achinés"}
+        ach{"acoli"}
+        ada{"adangme"}
+        ady{"adyghe"}
+        ae{"avestanín"}
+        aeb{"árabe de Túnez"}
+        af{"afrikaans"}
+        afh{"afrihili"}
+        agq{"aghem"}
+        ain{"ainu"}
+        ak{"ak"}
+        akk{"acadianu"}
+        akz{"alabama"}
+        ale{"aleut"}
+        aln{"gheg d’Albania"}
+        alt{"altai del sur"}
+        am{"amharicu"}
+        an{"aragonés"}
+        ang{"inglés antiguu"}
+        anp{"angika"}
+        ar{"árabe"}
+        ar_001{"árabe estándar modernu"}
+        arc{"araméu"}
+        arn{"mapuche"}
+        aro{"araona"}
+        arp{"arapaho"}
+        arq{"árabe d’Arxelia"}
+        arw{"arawak"}
+        ary{"árabe de Marruecos"}
+        arz{"árabe d’Exiptu"}
+        as{"asamés"}
+        asa{"asu"}
+        ase{"llingua de signos americana"}
+        ast{"asturianu"}
+        av{"aváricu"}
+        avk{"kotava"}
+        awa{"awadhi"}
+        ay{"aymara"}
+        az{"azerbaixanu"}
+        azb{"azerbaixanu del sur"}
+        ba{"bashkir"}
+        bal{"baluchi"}
+        ban{"balinés"}
+        bar{"bávaru"}
+        bas{"basaa"}
+        bax{"bamun"}
+        bbc{"batak toba"}
+        bbj{"ghomala"}
+        be{"bielorrusu"}
+        bej{"beja"}
+        bem{"bemba"}
+        bew{"betawi"}
+        bez{"bena"}
+        bfd{"bafut"}
+        bfq{"badaga"}
+        bg{"búlgaru"}
+        bho{"bhojpuri"}
+        bi{"bislama"}
+        bik{"bikol"}
+        bin{"bini"}
+        bjn{"banjar"}
+        bkm{"kom"}
+        bla{"siksika"}
+        bm{"bambara"}
+        bn{"bengalín"}
+        bo{"tibetanu"}
+        bpy{"bishnupriya"}
+        bqi{"bakhtiari"}
+        br{"bretón"}
+        bra{"braj"}
+        brh{"brahui"}
+        brx{"bodo"}
+        bs{"bosniu"}
+        bss{"akoose"}
+        bua{"buriat"}
+        bug{"buginés"}
+        bum{"bulu"}
+        byn{"blin"}
+        byv{"medumba"}
+        ca{"catalán"}
+        cad{"caddo"}
+        car{"caribe"}
+        cay{"cayuga"}
+        cch{"atsam"}
+        ce{"chechenu"}
+        ceb{"cebuanu"}
+        cgg{"chiga"}
+        ch{"chamorro"}
+        chb{"chibcha"}
+        chg{"chagatai"}
+        chk{"chuukés"}
+        chm{"mari"}
+        chn{"xíriga chinook"}
+        cho{"choctaw"}
+        chp{"chipewyanu"}
+        chr{"cheroqui"}
+        chy{"cheyenne"}
+        ckb{"kurdu sorani"}
+        co{"corsu"}
+        cop{"coptu"}
+        cps{"capiznon"}
+        cr{"cree"}
+        crh{"turcu de Crimea"}
+        cs{"checu"}
+        csb{"kashubianu"}
+        cu{"eslávicu eclesiásticu"}
+        cv{"chuvash"}
+        cy{"galés"}
+        da{"danés"}
+        dak{"dakota"}
+        dar{"dargwa"}
+        dav{"taita"}
+        de{"alemán"}
+        de_CH{"altualemán de Suiza"}
+        del{"delaware"}
+        den{"slave"}
+        dgr{"dogrib"}
+        din{"dinka"}
+        dje{"zarma"}
+        doi{"dogri"}
+        dsb{"baxu sorbiu"}
+        dtp{"dusun central"}
+        dua{"duala"}
+        dum{"neerlandés mediu"}
+        dv{"divehi"}
+        dyo{"jola-fonyi"}
+        dyu{"dyula"}
+        dz{"dzongkha"}
+        dzg{"dazaga"}
+        ebu{"embú"}
+        ee{"ewe"}
+        efi{"efik"}
+        egl{"emilianu"}
+        egy{"exipciu antiguu"}
+        eka{"ekajuk"}
+        el{"griegu"}
+        elx{"elamita"}
+        en{"inglés"}
+        en_CA{"inglés de Canadá"}
+        en_GB{"inglés de Gran Bretaña"}
+        en_US{"inglés americanu"}
+        enm{"inglés mediu"}
+        eo{"esperanto"}
+        es{"español"}
+        es_MX{"español de México"}
+        esu{"yupik central"}
+        et{"estoniu"}
+        eu{"vascu"}
+        ewo{"ewondo"}
+        ext{"estremeñu"}
+        fa{"persa"}
+        fan{"fang"}
+        fat{"fanti"}
+        ff{"fulah"}
+        fi{"finlandés"}
+        fil{"filipín"}
+        fit{"finlandés de Tornedalen"}
+        fj{"fixanu"}
+        fo{"feroés"}
+        fon{"fon"}
+        fr{"francés"}
+        fr_CA{"francés de Canadá"}
+        fr_CH{"francés de Suiza"}
+        frc{"francés cajun"}
+        frm{"francés mediu"}
+        fro{"francés antiguu"}
+        frp{"arpitanu"}
+        frr{"frisón del norte"}
+        frs{"frisón oriental"}
+        fur{"friulianu"}
+        fy{"frisón occidental"}
+        ga{"irlandés"}
+        gaa{"ga"}
+        gag{"gagauz"}
+        gan{"chinu gan"}
+        gay{"gayo"}
+        gba{"gbaya"}
+        gbz{"dari zoroastrianu"}
+        gd{"gaélicu escocés"}
+        gez{"geez"}
+        gil{"gilbertés"}
+        gl{"gallegu"}
+        glk{"gilaki"}
+        gmh{"altualemán mediu"}
+        gn{"guaraní"}
+        goh{"altualemán antiguu"}
+        gom{"goan konkani"}
+        gon{"gondi"}
+        gor{"gorontalo"}
+        got{"góticu"}
+        grb{"grebo"}
+        grc{"griegu antiguu"}
+        gsw{"alemán de Suiza"}
+        gu{"guyaratí"}
+        guc{"wayuu"}
+        gur{"frafra"}
+        guz{"gusii"}
+        gv{"manés"}
+        gwi{"gwichʼin"}
+        ha{"ḥausa"}
+        hai{"haida"}
+        hak{"chinu hakka"}
+        haw{"hawaianu"}
+        he{"hebréu"}
+        hi{"hindi"}
+        hif{"hindi de Fiji"}
+        hil{"hiligaynon"}
+        hit{"hitita"}
+        hmn{"hmong"}
+        ho{"hiri motu"}
+        hr{"croata"}
+        hsb{"altu sorbiu"}
+        hsn{"chinu xiang"}
+        ht{"haitianu"}
+        hu{"húngaru"}
+        hup{"hupa"}
+        hy{"armeniu"}
+        hz{"herero"}
+        ia{"interlingua"}
+        iba{"iban"}
+        ibb{"ibibio"}
+        id{"indonesiu"}
+        ie{"interlingue"}
+        ig{"igbo"}
+        ii{"yi de Sichuan"}
+        ik{"inupiaq"}
+        ilo{"iloko"}
+        inh{"ingush"}
+        io{"ido"}
+        is{"islandés"}
+        it{"italianu"}
+        iu{"inuktitut"}
+        izh{"ingrianu"}
+        ja{"xaponés"}
+        jam{"inglés criollu xamaicanu"}
+        jbo{"lojban"}
+        jgo{"ngomba"}
+        jmc{"machame"}
+        jpr{"xudeo-persa"}
+        jrb{"xudeo-árabe"}
+        jut{"jutlandés"}
+        jv{"xavanés"}
+        ka{"xeorxanu"}
+        kaa{"kara-kalpak"}
+        kab{"kabileñu"}
+        kac{"kachin"}
+        kaj{"jju"}
+        kam{"kamba"}
+        kaw{"kawi"}
+        kbd{"kabardianu"}
+        kbl{"kanembu"}
+        kcg{"tyap"}
+        kde{"makonde"}
+        kea{"cabuverdianu"}
+        ken{"kenyang"}
+        kfo{"koro"}
+        kg{"kongo"}
+        kgp{"kaingang"}
+        kha{"khasi"}
+        kho{"khotanés"}
+        khq{"koyra chiini"}
+        khw{"khowar"}
+        ki{"kikuyu"}
+        kiu{"kirmanjki"}
+        kj{"kuanyama"}
+        kk{"kazaquistanín"}
+        kkj{"kako"}
+        kl{"kalaallisut"}
+        kln{"kln"}
+        km{"khmer"}
+        kmb{"kimbundu"}
+        kn{"canarés"}
+        ko{"coreanu"}
+        koi{"komi-permyak"}
+        kok{"konkani"}
+        kos{"kosraeanu"}
+        kpe{"kpelle"}
+        kr{"kanuri"}
+        krc{"karachay-balkar"}
+        kri{"krio"}
+        krj{"kinaray-a"}
+        krl{"karelianu"}
+        kru{"kurukh"}
+        ks{"cachemirés"}
+        ksb{"shambala"}
+        ksf{"bafia"}
+        ksh{"colonianu"}
+        ku{"curdu"}
+        kum{"kumyk"}
+        kut{"kutenai"}
+        kv{"komi"}
+        kw{"córnicu"}
+        ky{"kirguistanín"}
+        la{"llatín"}
+        lad{"ladino"}
+        lag{"langi"}
+        lah{"lahnda"}
+        lam{"lamba"}
+        lb{"luxemburgués"}
+        lez{"lezghianu"}
+        lfn{"lingua franca nova"}
+        lg{"ganda"}
+        li{"limburgués"}
+        lij{"ligurianu"}
+        liv{"livonianu"}
+        lkt{"lakota"}
+        lmo{"lombardu"}
+        ln{"lingala"}
+        lo{"laosianu"}
+        lol{"mongo"}
+        loz{"lozi"}
+        lt{"lituanu"}
+        ltg{"latgalianu"}
+        lu{"luba-katanga"}
+        lua{"luba-lulua"}
+        lui{"luiseno"}
+        lun{"lunda"}
+        luo{"luo"}
+        lus{"mizo"}
+        luy{"luyia"}
+        lv{"letón"}
+        lzh{"chinu lliterariu"}
+        lzz{"laz"}
+        mad{"madurés"}
+        maf{"mafa"}
+        mag{"magahi"}
+        mai{"maithili"}
+        mak{"makasar"}
+        man{"mandingo"}
+        mas{"masai"}
+        mde{"maba"}
+        mdf{"moksha"}
+        mdr{"mandar"}
+        men{"mende"}
+        mer{"meru"}
+        mfe{"morisyen"}
+        mg{"malgaxe"}
+        mga{"írlandés mediu"}
+        mgh{"makhuwa-meetto"}
+        mgo{"meta’"}
+        mh{"marshallés"}
+        mi{"maorí"}
+        mic{"micmac"}
+        min{"minangkabau"}
+        mk{"macedoniu"}
+        ml{"malayalam"}
+        mn{"mongol"}
+        mnc{"manchú"}
+        mni{"manipuri"}
+        moh{"mohawk"}
+        mos{"mossi"}
+        mr{"marathi"}
+        mrj{"mari occidental"}
+        ms{"malayu"}
+        mt{"maltés"}
+        mua{"mundang"}
+        mul{"múltiples llingües"}
+        mus{"creek"}
+        mwl{"mirandés"}
+        mwr{"marwari"}
+        mwv{"mentawai"}
+        my{"birmanu"}
+        mye{"myene"}
+        myv{"erzya"}
+        mzn{"mazanderani"}
+        na{"nauru"}
+        nan{"chinu min nan"}
+        nap{"napolitanu"}
+        naq{"nama"}
+        nb{"noruegu Bokmål"}
+        nd{"ndebele del norte"}
+        nds{"baxu alemán"}
+        ne{"nepalés"}
+        new{"newari"}
+        ng{"ndonga"}
+        nia{"nias"}
+        niu{"niueanu"}
+        njo{"ao naga"}
+        nl{"neerlandés"}
+        nl_BE{"flamencu"}
+        nmg{"kwasio"}
+        nn{"noruegu Nynorsk"}
+        nnh{"ngiemboon"}
+        no{"noruegu"}
+        nog{"nogai"}
+        non{"noruegu antiguu"}
+        nov{"novial"}
+        nqo{"n’ko"}
+        nr{"ndebele del sur"}
+        nso{"sotho del norte"}
+        nus{"nuer"}
+        nv{"navajo"}
+        nwc{"newari clásicu"}
+        ny{"nyanja"}
+        nym{"nyamwezi"}
+        nyn{"nyankole"}
+        nyo{"nyoro"}
+        nzi{"nzima"}
+        oc{"occitanu"}
+        oj{"ojibwa"}
+        om{"oromo"}
+        or{"oriya"}
+        os{"oséticu"}
+        ota{"turcu otomanu"}
+        pa{"punyabí"}
+        pag{"pangasinan"}
+        pam{"pampanga"}
+        pap{"papiamento"}
+        pau{"palauanu"}
+        pcd{"pícaru"}
+        pdc{"alemán de Pennsylvania"}
+        peo{"persa antiguu"}
+        pfl{"alemán palatinu"}
+        phn{"feniciu"}
+        pl{"polacu"}
+        pms{"piamontés"}
+        pon{"pohnpeianu"}
+        prg{"prusianu"}
+        pro{"provenzal antiguu"}
+        ps{"pashtu"}
+        pt{"portugués"}
+        pt_BR{"portugués del Brasil"}
+        qu{"quechua"}
+        quc{"kʼicheʼ"}
+        raj{"rajasthanín"}
+        rgn{"romañol"}
+        rif{"rifianu"}
+        rm{"romanche"}
+        rn{"rundi"}
+        ro{"rumanu"}
+        ro_MD{"moldavu"}
+        rof{"rombo"}
+        rom{"romaní"}
+        root{"root"}
+        rtm{"rotumanu"}
+        ru{"rusu"}
+        rue{"rusyn"}
+        rw{"rw"}
+        rwk{"rwa"}
+        sa{"sánscritu"}
+        sah{"sakha"}
+        sam{"araméu samaritanu"}
+        saq{"samburu"}
+        sas{"sasak"}
+        sat{"santali"}
+        saz{"saurashtra"}
+        sbp{"sangu"}
+        sc{"sardu"}
+        scn{"sicilianu"}
+        sco{"scots"}
+        sd{"sindhi"}
+        sdc{"sardu sassarés"}
+        se{"sami del norte"}
+        see{"séneca"}
+        seh{"sena"}
+        ses{"koyraboro senni"}
+        sg{"sango"}
+        sga{"irlandés antiguu"}
+        sh{"serbo-croata"}
+        shi{"tachelhit"}
+        shn{"shan"}
+        si{"cingalés"}
+        sid{"sidamo"}
+        sk{"eslovacu"}
+        sl{"eslovenu"}
+        sm{"samoanu"}
+        sma{"sami del sur"}
+        smj{"lule sami"}
+        smn{"inari sami"}
+        sms{"skolt sami"}
+        sn{"shona"}
+        snk{"soninke"}
+        so{"somalín"}
+        sq{"albanu"}
+        sr{"serbiu"}
+        srn{"sranan tongo"}
+        srr{"serer"}
+        ss{"swati"}
+        ssy{"saho"}
+        st{"sotho del sur"}
+        stq{"frisón de Saterland"}
+        su{"sondanés"}
+        suk{"sukuma"}
+        sus{"susu"}
+        sux{"sumeriu"}
+        sv{"suecu"}
+        sw{"suaḥili"}
+        swb{"comorianu"}
+        swc{"swahili del Congo"}
+        syc{"siriacu clásicu"}
+        syr{"siriacu"}
+        szl{"silesianu"}
+        ta{"tamil"}
+        tcy{"tulu"}
+        te{"telugu"}
+        tem{"timne"}
+        teo{"teso"}
+        tet{"tetum"}
+        tg{"taxiquistanín"}
+        th{"tailandés"}
+        ti{"tigrinya"}
+        tig{"tigre"}
+        tiv{"tiv"}
+        tk{"turcomanu"}
+        tkl{"tokelau"}
+        tl{"tagalog"}
+        tlh{"klingon"}
+        tmh{"tamashek"}
+        tn{"tswana"}
+        to{"tonganu"}
+        tpi{"tok pisin"}
+        tr{"turcu"}
+        trv{"taroko"}
+        ts{"tsonga"}
+        tt{"tártaru"}
+        tum{"tumbuka"}
+        tvl{"tuvalu"}
+        twq{"tasawaq"}
+        ty{"tahitianu"}
+        tyv{"tuvinianu"}
+        tzm{"tamazight del Atlas central"}
+        udm{"udmurt"}
+        ug{"uigur"}
+        uga{"ugaríticu"}
+        uk{"ucraín"}
+        umb{"umbundu"}
+        und{"llingua desconocida"}
+        ur{"ur"}
+        uz{"uzbequistanín"}
+        vai{"vai"}
+        ve{"venda"}
+        vec{"venecianu"}
+        vi{"vietnamín"}
+        vls{"flamencu occidental"}
+        vun{"vunjo"}
+        wa{"valón"}
+        wal{"wolaytta"}
+        war{"waray"}
+        wo{"wolof"}
+        wuu{"chinu wu"}
+        xh{"xhosa"}
+        xog{"soga"}
+        yao{"yao"}
+        yap{"yapés"}
+        yav{"yangben"}
+        ybb{"yemba"}
+        yi{"yiddish"}
+        yo{"yoruba"}
+        yue{"cantonés"}
+        za{"zhuang"}
+        zap{"zapoteca"}
+        zea{"zeelandés"}
+        zgh{"tamazight estándar de Marruecos"}
+        zh{"chinu"}
+        zh_Hans{"chinu simplificáu"}
+        zh_Hant{"chinu tradicional"}
+        zu{"zulú"}
+        zxx{"ensin conteníu llingüísticu"}
+    }
+    LanguagesShort{
+        en_GB{"inglés del R.X."}
+        en_US{"inglés d’EE.XX."}
+    }
+    Scripts{
+        Arab{"árabe"}
+        Armn{"armeniu"}
+        Beng{"bengalín"}
+        Bopo{"Bopo"}
+        Brai{"braille"}
+        Cyrl{"cirílicu"}
+        Deva{"devanagari"}
+        Egyd{"Egyd"}
+        Ethi{"etíope"}
+        Geor{"xeorxanu"}
+        Grek{"griegu"}
+        Gujr{"guyarati"}
+        Guru{"gurmukhi"}
+        Hang{"hangul"}
+        Hani{"escritura china"}
+        Hans{"chinu simplificáu"}
+        Hant{"chinu tradicional"}
+        Hebr{"hebréu"}
+        Hira{"ḥiragana"}
+        Jpan{"xaponés"}
+        Kana{"katakana"}
+        Khmr{"Khmr"}
+        Knda{"canarés"}
+        Kore{"coreanu"}
+        Laoo{"laosianu"}
+        Latn{"llatín"}
+        Mlym{"malayalam"}
+        Mong{"mongol"}
+        Mymr{"birmanu"}
+        Orya{"oriya"}
+        Sinh{"cingalés"}
+        Taml{"tamil"}
+        Telu{"telugu"}
+        Thaa{"thaana"}
+        Thai{"tailandés"}
+        Tibt{"tibetanu"}
+        Zsym{"símbolos"}
+        Zxxx{"non escritu"}
+        Zyyy{"común"}
+        Zzzz{"escritura desconocida"}
+    }
+    Scripts%stand-alone{
+        Hans{"Hans"}
+        Hant{"Hant"}
+    }
+    Types{
+        calendar{
+            buddhist{"calendariu budista"}
+            chinese{"calendariu chinu"}
+            dangi{"calendariu dangi"}
+            ethiopic{"calendariu etíope"}
+            gregorian{"calendariu gregorianu"}
+            hebrew{"calendariu hebréu"}
+            islamic{"calendariu islámicu"}
+            iso8601{"calendariu ISO-8601"}
+            japanese{"calendariu xaponés"}
+            persian{"calendariu persa"}
+            roc{"calendariu republicanu chinu"}
+        }
+        collation{
+            ducet{"orde de clasificación Unicode predetermináu"}
+            search{"gueta xeneral"}
+            standard{"orde de clasificación estándar"}
+        }
+        numbers{
+            arab{"númberos arábico-índicos"}
+            arabext{"númberos arábico-índicos estendíos"}
+            armn{"númberos armenios"}
+            armnlow{"númberos armenios en minúscules"}
+            beng{"númberos bengalinos"}
+            deva{"númberos devanagari"}
+            ethi{"númberos etíopes"}
+            fullwide{"númberos n’anchu completu"}
+            geor{"númberos xeorxanos"}
+            grek{"númberos griegos"}
+            greklow{"númberos griegos en minúscules"}
+            gujr{"númberos gujarati"}
+            guru{"númberos gurmukhi"}
+            hanidec{"númberos decimales chinos"}
+            hans{"númberos chinos simplificaos"}
+            hansfin{"númberos chinos financieros simplificaos"}
+            hant{"númberos chinos tradicionales"}
+            hantfin{"númberos chinos financieros tradicionales"}
+            hebr{"númberos hebreos"}
+            jpan{"númberos xaponeses"}
+            jpanfin{"númberos financieros xaponeses"}
+            khmr{"numberación khmer"}
+            knda{"numberación kannada"}
+            laoo{"númberos laosianos"}
+            latn{"númberos occidentales"}
+            mlym{"númberos malayalam"}
+            mymr{"númberos myanmar"}
+            orya{"númberos oriya"}
+            roman{"númberos romanos"}
+            romanlow{"númberos romanos en minúscules"}
+            taml{"númberos tamil tradicionales"}
+            tamldec{"númberos tamil"}
+            telu{"númberos telugu"}
+            thai{"númberos tailandeses"}
+            tibt{"númberos tibetanos"}
+        }
+    }
+    Version{"2.0"}
+    codePatterns{
+        language{"Llingua: {0}"}
+        script{"Alfabetu: {0}"}
+        territory{"Rexón: {0}"}
+    }
+    localeDisplayPattern{
+        keyTypePattern{"{0}: {1}"}
+        pattern{"{0} ({1})"}
+        separator{"{0}, {1}"}
+    }
+}
