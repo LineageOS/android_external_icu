@@ -215,6 +215,10 @@ u_errorName_48(UErrorCode code) {
 	return u_errorName(code);
 }
 
+U_CAPI const char * U_EXPORT2
+u_errorName_51(UErrorCode code) {
+        return u_errorName(code);
+}
 
 /*
  * Hey, Emacs, please set the following:
