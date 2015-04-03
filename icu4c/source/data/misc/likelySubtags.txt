@@ -335,6 +335,7 @@ likelySubtags:table(nofallback){
     ksh{"ksh_Latn_DE"}
     ku{"ku_Latn_TR"}
     ku_Arab{"ku_Arab_IQ"}
+    ku_IQ{"ku_Arab_IQ"}
     ku_IR{"ku_Arab_IR"}
     ku_LB{"ku_Arab_LB"}
     kum{"kum_Cyrl_RU"}
