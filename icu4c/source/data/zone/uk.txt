@@ -1008,7 +1008,6 @@ uk{
         }
         "Europe:Kiev"{
             ec{"Київ"}
-            ld{"Київ"}
         }
         "Europe:Lisbon"{
             ec{"Лісабон"}
