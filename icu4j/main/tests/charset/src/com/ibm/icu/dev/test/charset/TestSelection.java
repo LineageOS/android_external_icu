@@ -171,7 +171,7 @@ public class TestSelection extends TestFmwk {
             "client/server o multi-tiered, rispetto all\'utilizzo dei set di caratteri tradizionali, permette un " +
             "significativo abbattimento dei costi di gestione. Unicode consente che un\'unica versione di un software " +
             "o di un sito web siano fruibili con piattaforme, lingue e paesi diversi, evitando la necessit\u00E0 di " +
-            "reingenierizzare il prodotto per ogni situazione specifica. Permette, inoltre, il trasporto del testo " +
+            "reingegnerizzare il prodotto per ogni situazione specifica. Permette, inoltre, il trasporto del testo " +
             "fra sistemi diversi senza che abbia luogo alcuna corruzione dei dati.\n",
 
             "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 Unicode? Unicode - \u044D\u0442\u043E" +
