@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "672dbeab_f0679633",
+        "filename": "icu4c/source/data/misc/zoneinfo64.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 27322
+      },
+      "writtenOn": "2020-10-27T08:24:58Z",
+      "side": 1,
+      "message": "// tz version: 2020A",
+      "revId": "c99fac2d14a2acb15bff256dc1194210c4cf0127",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
