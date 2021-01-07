@@ -16,25 +16,34 @@
 
 package com.android.icu.text;
 
+import android.icu.impl.number.DecimalFormatProperties;
+import android.icu.text.DecimalFormat;
 import android.icu.text.DecimalFormatSymbols;
-import android.icu.text.NumberingSystem;
-import android.icu.util.ULocale;
 
 import libcore.api.IntraCoreApi;
 
 /**
- * Used by {@link java.text.DecimalFormatSymbols}.
+ * Factory class to create {@link DecimalFormat} instances compatible with
+ * {@link java.text.DecimalFormat}.
+ *
  * @hide
  */
 @IntraCoreApi
-public class DecimalFormatSymbolsBridge {
+public class CompatibleDecimalFormatFactory {
 
     /**
-     * Public API {@link DecimalFormatSymbols#getPatternSeparator()} does not localize pattern
-     * separator. This API is consumed by libcore's {@link java.text.DecimalFormatSymbols}.
+     * Creates an instance compatible with {@link java.text.DecimalFormat}.
+     *
+     * WARNING: Do not call the following methods, and otherwise the internal states for the
+     * compatibility could be disrupted.
+     *   - {@link DecimalFormat#setParseStrict(boolean)}
+     *
+     * @hide
      */
     @IntraCoreApi
-    public static String getLocalizedPatternSeparator(ULocale locale, NumberingSystem ns) {
-        return DecimalFormatSymbols.getLocalizedPatternSeparator(locale, ns);
+    public static DecimalFormat create(String pattern, DecimalFormatSymbols dfs) {
+        DecimalFormat df = new DecimalFormat(pattern, dfs);
+        df.setParseStrictMode(DecimalFormatProperties.ParseMode.JAVA_COMPATIBILITY);
+        return df;
     }
 }
