@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e02a61a7_a3418bf7",
+        "filename": "icu4c/source/data/misc/zoneinfo64.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15173
+      },
+      "writtenOn": "2021-02-17T09:11:59Z",
+      "side": 1,
+      "message": "Why does this look to be representing a major version ICU version update? That shouldn\u0027t be happening.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 20
+      },
+      "revId": "48ee4c84b130ce8857bd963e56d0d437c1e3ddae",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
