@@ -16,6 +16,12 @@ package {
     default_visibility: [
         "//external/icu:__subpackages__",
     ],
+    // See: http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // all of the 'license_kinds' from "external_icu_icu4c_license"
+    // to get the below license kinds:
+    //   SPDX-license-identifier-Unicode-DFS
+    default_applicable_licenses: ["external_icu_icu4c_license"],
 }
 
 cc_defaults {
@@ -27,7 +33,7 @@ cc_defaults {
     fuzz_config: {
         componentid: 24949, // Bugs are filed to the "Core library" component
         hotlists: ["930429"], // The hotlist applied on the bug
-        fuzz_on_haiku_device: false,
+        fuzz_on_haiku_device: true,
         // Email addresses of users who should be CC'd on bugs.
         cc: [
             "vichang@google.com",
