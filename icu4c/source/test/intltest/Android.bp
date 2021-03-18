@@ -34,6 +34,9 @@ cc_defaults {
         "**/*.c",
         "**/*.cpp",
     ],
+    exclude_srcs: [
+        "numberformat2test.cpp",
+    ],
 }
 
 // Build exactly one variant even for 32-bit / 64-bit only target, because
