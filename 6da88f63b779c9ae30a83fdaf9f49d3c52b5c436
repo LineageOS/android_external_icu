@@ -16,6 +16,23 @@
       "message": "Can\u0027t select Sardinian in System settings",
       "revId": "6da88f63b779c9ae30a83fdaf9f49d3c52b5c436",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87ea9902_b04b3e63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30369
+      },
+      "writtenOn": "2022-01-23T03:29:25Z",
+      "side": 1,
+      "message": "Hi, I\u0027m part of the localization team of Lineage in Sardinian. We would like to understand what are the following steps towards having Sardinian included as a language in Lineage. Could you please provide some information on this and, if this is not the right place to ask, point to the correct direction? Thank you in advance!",
+      "revId": "6da88f63b779c9ae30a83fdaf9f49d3c52b5c436",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
