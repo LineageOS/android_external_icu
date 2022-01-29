@@ -191,8 +191,23 @@ java_sdk_library {
             "-Xep:MissingOverride:OFF",
         ],
     },
+
+    public: {
+        enabled: true,
+    },
+    system: {
+        enabled: true,
+    },
+    module_lib: {
+        enabled: true,
+    },
+
     api_dir: "api/public",
     api_only: true,
+
+    // Emit nullability annotations from the source to the stub files.
+    annotations_enabled: true,
+
     sdk_version: "none",
     system_modules: "art-module-public-api-stubs-system-modules",
 
