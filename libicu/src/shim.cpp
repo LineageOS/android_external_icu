@@ -185,6 +185,7 @@
 #undef ubrk_previous
 #undef ubrk_setText
 #undef ubrk_setUText
+#undef ucol_clone
 #undef ucol_close
 #undef ucol_countAvailable
 #undef ucol_getAttribute
@@ -812,6 +813,9 @@ void ubrk_setText(UBreakIterator * bi, const UChar * text, int32_t textLength, U
 }
 void ubrk_setUText(UBreakIterator * bi, UText * text, UErrorCode * status) {
   U_ICU_ENTRY_POINT_RENAME(ubrk_setUText)(bi, text, status);
+}
+UCollator * ucol_clone(const UCollator * coll, UErrorCode * status) {
+  return U_ICU_ENTRY_POINT_RENAME(ucol_clone)(coll, status);
 }
 void ucol_close(UCollator * coll) {
   U_ICU_ENTRY_POINT_RENAME(ucol_close)(coll);
