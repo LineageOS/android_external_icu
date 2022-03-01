@@ -16,6 +16,23 @@
       "message": "Topic builds fine for potter and thea.",
       "revId": "6754813b916679e3a4bb527af3590d151d61e909",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4daed3e7_f6f5cd3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30579
+      },
+      "writtenOn": "2022-03-01T11:19:51Z",
+      "side": 1,
+      "message": "cherry pick was successfully",
+      "revId": "6754813b916679e3a4bb527af3590d151d61e909",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
