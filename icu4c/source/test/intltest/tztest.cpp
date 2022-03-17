@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /***********************************************************************
  * COPYRIGHT: 
@@ -14,6 +14,7 @@
 #include "unicode/simpletz.h"
 #include "unicode/calendar.h"
 #include "unicode/gregocal.h"
+#include "unicode/localpointer.h"
 #include "unicode/resbund.h"
 #include "unicode/strenum.h"
 #include "unicode/uversion.h"
@@ -72,6 +73,7 @@ void TimeZoneTest::runIndexedTest( int32_t index, UBool exec, const char* &name,
     TESTCASE_AUTO(TestGetRegion);
     TESTCASE_AUTO(TestGetAvailableIDsNew);
     TESTCASE_AUTO(TestGetUnknown);
+    TESTCASE_AUTO(TestGetGMT);
     TESTCASE_AUTO(TestGetWindowsID);
     TESTCASE_AUTO(TestGetIDForWindowsID);
     TESTCASE_AUTO_END;
@@ -138,8 +140,11 @@ TimeZoneTest::TestGenericAPI()
     }
 
     TimeZone* hostZone = TimeZone::detectHostTimeZone();
+    int32_t hostZoneRawOffset = hostZone->getRawOffset();
+    logln("hostZone->getRawOffset() = %d , tzoffset = %d", hostZoneRawOffset, tzoffset * (-1000));
+
     /* Host time zone's offset should match the offset returned by uprv_timezone() */
-    if (hostZone->getRawOffset() != tzoffset * (-1000)) {
+    if (hostZoneRawOffset != tzoffset * (-1000)) {
         errln("FAIL: detectHostTimeZone()'s raw offset != host timezone's offset");
     }
     delete hostZone;
@@ -148,10 +153,13 @@ TimeZoneTest::TestGenericAPI()
     const char* tzver = TimeZone::getTZDataVersion(status);
     if (U_FAILURE(status)) {
         errcheckln(status, "FAIL: getTZDataVersion failed - %s", u_errorName(status));
-    } else if (uprv_strlen(tzver) != 5 /* 4 digits + 1 letter */) {
-        errln((UnicodeString)"FAIL: getTZDataVersion returned " + tzver);
     } else {
-        logln((UnicodeString)"tzdata version: " + tzver);
+        int32_t tzverLen = uprv_strlen(tzver);
+        if (tzverLen == 5 || tzverLen == 6 /* 4 digits + 1 or 2 letters */) {
+            logln((UnicodeString)"tzdata version: " + tzver);
+        } else {
+            errln((UnicodeString)"FAIL: getTZDataVersion returned " + tzver);
+        }
     }
 }
 
@@ -419,20 +427,24 @@ TimeZoneTest::TestGetAvailableIDs913()
 #endif
 
     UnicodeString str;
-    UnicodeString *buf = new UnicodeString("TimeZone::createEnumeration() = { ");
+    UnicodeString buf(u"TimeZone::createEnumeration() = { ");
     int32_t s_length;
-    StringEnumeration* s = TimeZone::createEnumeration();
-    if (s == NULL) {
+    StringEnumeration* s = TimeZone::createEnumeration(ec);
+    LocalPointer<StringEnumeration> tmp1(TimeZone::createEnumeration(), ec);
+    if (U_FAILURE(ec) || s == NULL) {
         dataerrln("Unable to create TimeZone enumeration");
         return;
     }
     s_length = s->count(ec);
+    if (s_length != tmp1->count(ec)) {
+        errln("TimeZone::createEnumeration() with no status args returns a different count.");
+    }
     for (i = 0; i < s_length;++i) {
-        if (i > 0) *buf += ", ";
+        if (i > 0) buf += ", ";
         if ((i & 1) == 0) {
-            *buf += *s->snext(ec);
+            buf += *s->snext(ec);
         } else {
-            *buf += UnicodeString(s->next(NULL, ec), "");
+            buf += UnicodeString(s->next(NULL, ec), "");
         }
 
         if((i % 5) == 4) {
@@ -446,8 +458,8 @@ TimeZoneTest::TestGetAvailableIDs913()
             }
         }
     }
-    *buf += " };";
-    logln(*buf);
+    buf += " };";
+    logln(buf);
 
     /* Confirm that the following zones can be retrieved: The first
      * zone, the last zone, and one in-between.  This tests the binary
@@ -474,31 +486,47 @@ TimeZoneTest::TestGetAvailableIDs913()
     }
     delete s;
 
-    buf->truncate(0);
-    *buf += "TimeZone::createEnumeration(GMT+01:00) = { ";
+    buf.truncate(0);
+    buf += "TimeZone::createEnumeration(GMT+01:00) = { ";
 
-    s = TimeZone::createEnumeration(1 * U_MILLIS_PER_HOUR);
+    s = TimeZone::createEnumerationForRawOffset(1 * U_MILLIS_PER_HOUR, ec);
+    LocalPointer<StringEnumeration> tmp2(TimeZone::createEnumeration(1 * U_MILLIS_PER_HOUR), ec);
+    if (U_FAILURE(ec)) {
+        dataerrln("Unable to create TimeZone enumeration for GMT+1");
+        return;
+    }
     s_length = s->count(ec);
+    if (s_length != tmp2->count(ec)) {
+        errln("TimeZone::createEnumeration(GMT+01:00) with no status args returns a different count.");
+    }
     for (i = 0; i < s_length;++i) {
-        if (i > 0) *buf += ", ";
-        *buf += *s->snext(ec);
+        if (i > 0) buf += ", ";
+        buf += *s->snext(ec);
     }
     delete s;
-    *buf += " };";
-    logln(*buf);
+    buf += " };";
+    logln(buf);
 
 
-    buf->truncate(0);
-    *buf += "TimeZone::createEnumeration(US) = { ";
+    buf.truncate(0);
+    buf += "TimeZone::createEnumeration(US) = { ";
 
-    s = TimeZone::createEnumeration("US");
-    s_length = s->count(ec);
-    for (i = 0; i < s_length;++i) {
-        if (i > 0) *buf += ", ";
-        *buf += *s->snext(ec);
+    s = TimeZone::createEnumerationForRegion("US", ec);
+    LocalPointer<StringEnumeration> tmp3(TimeZone::createEnumeration("US"), ec);
+    if (U_FAILURE(ec)) {
+        dataerrln("Unable to create TimeZone enumeration for US");
+        return;
     }
-    *buf += " };";
-    logln(*buf);
+    s_length = s->count(ec);
+    if (s_length != tmp3->count(ec)) {
+        errln("TimeZone::createEnumeration(\"US\") with no status args returns a different count.");
+    }
+    for (i = 0; i < s_length; ++i) {
+        if (i > 0) buf += ", ";
+        buf += *s->snext(ec);
+    }
+    buf += " };";
+    logln(buf);
 
     TimeZone *tz = TimeZone::createTimeZone("PST");
     if (tz != 0) logln("getTimeZone(PST) = " + tz->getID(str));
@@ -518,7 +546,6 @@ TimeZoneTest::TestGetAvailableIDs913()
         errln("FAIL: getTimeZone(NON_EXISTENT) = " + temp);
     delete tz;
 
-    delete buf;
     delete s;
 }
 
@@ -534,64 +561,64 @@ TimeZoneTest::TestGetAvailableIDsNew()
     const UnicodeString *id1, *id2;
     UnicodeString canonicalID;
     UBool isSystemID;
-    char region[4];
+    char region[4] = {0};
     int32_t zoneCount;
 
     any = canonical = canonicalLoc = any_US = canonical_US = canonicalLoc_US = any_W5 = any_CA_W5 = any_US_E14 = NULL;
     
     any = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_ANY, NULL, NULL, ec);
     if (U_FAILURE(ec)) {
-        dataerrln("Failed to create enumration for ANY");
+        dataerrln("Failed to create enumeration for ANY");
         goto cleanup;
     }
 
     canonical = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_CANONICAL, NULL, NULL, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for CANONICAL");
+        errln("Failed to create enumeration for CANONICAL");
         goto cleanup;
     }
 
     canonicalLoc = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_CANONICAL_LOCATION, NULL, NULL, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for CANONICALLOC");
+        errln("Failed to create enumeration for CANONICALLOC");
         goto cleanup;
     }
 
     any_US = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_ANY, "US", NULL, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for ANY_US");
+        errln("Failed to create enumeration for ANY_US");
         goto cleanup;
     }
 
     canonical_US = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_CANONICAL, "US", NULL, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for CANONICAL_US");
+        errln("Failed to create enumeration for CANONICAL_US");
         goto cleanup;
     }
 
     canonicalLoc_US = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_CANONICAL_LOCATION, "US", NULL, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for CANONICALLOC_US");
+        errln("Failed to create enumeration for CANONICALLOC_US");
         goto cleanup;
     }
 
     rawOffset = (-5)*60*60*1000;
     any_W5 = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_ANY, NULL, &rawOffset, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for ANY_W5");
+        errln("Failed to create enumeration for ANY_W5");
         goto cleanup;
     }
 
     any_CA_W5 = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_ANY, "CA", &rawOffset, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for ANY_CA_W5");
+        errln("Failed to create enumeration for ANY_CA_W5");
         goto cleanup;
     }
 
     rawOffset = 14*60*60*1000;
     any_US_E14 = TimeZone::createTimeZoneIDEnumeration(UCAL_ZONE_TYPE_ANY, "US", &rawOffset, ec);
     if (U_FAILURE(ec)) {
-        errln("Failed to create enumration for ANY_US_E14");
+        errln("Failed to create enumeration for ANY_US_E14");
         goto cleanup;
     }
 
@@ -857,7 +884,9 @@ void TimeZoneTest::TestShortZoneIDs()
         {"PRT", -240, FALSE}, // ICU Link - America/Puerto_Rico
         {"CNT", -210, TRUE},  // ICU Link - America/St_Johns
         {"AGT", -180, FALSE}, // ICU Link - America/Argentina/Buenos_Aires
-        {"BET", -180, TRUE},  // ICU Link - America/Sao_Paulo
+        // Per https://mm.icann.org/pipermail/tz-announce/2019-July/000056.html
+        //      Brazil has canceled DST and will stay on standard time indefinitely.
+        {"BET", -180, FALSE},  // ICU Link - America/Sao_Paulo
         {"GMT", 0, FALSE},    // Olson etcetera Link - Etc/GMT
         {"UTC", 0, FALSE},    // Olson etcetera 0
         {"ECT", 60, TRUE},    // ICU Link - Europe/Paris
@@ -877,7 +906,7 @@ void TimeZoneTest::TestShortZoneIDs()
         {"AET", 600, TRUE},   // ICU Link - Australia/Sydney
         {"SST", 660, FALSE},  // ICU Link - Pacific/Guadalcanal
         {"NST", 720, TRUE},   // ICU Link - Pacific/Auckland
-        {"MIT", 780, TRUE},   // ICU Link - Pacific/Apia
+        {"MIT", 780, FALSE},  // ICU Link - Pacific/Apia
 
         {"Etc/Unknown", 0, FALSE},  // CLDR
 
@@ -1166,8 +1195,10 @@ void TimeZoneTest::TestCustomParse()
         TimeZone *zone = TimeZone::createTimeZone(id);
         UnicodeString   itsID, temp;
 
-        if (dynamic_cast<OlsonTimeZone *>(zone) != NULL) {
+        OlsonTimeZone *ozone = dynamic_cast<OlsonTimeZone *>(zone);
+        if (ozone != nullptr) {
             logln(id + " -> Olson time zone");
+            ozone->operator=(*ozone);  // self-assignment should be a no-op
         } else {
             zone->getID(itsID);
             int32_t ioffset = zone->getRawOffset()/1000;
@@ -1205,7 +1236,8 @@ TimeZoneTest::TestAliasedNames()
         /* Generated by org.unicode.cldr.tool.CountItems */
 
         /* zoneID, canonical zoneID */
-        {"Africa/Timbuktu", "Africa/Bamako"},
+        {"Africa/Asmara", "Africa/Addis_Ababa"},
+        {"Africa/Timbuktu", "Africa/Abidjan"},
         {"America/Argentina/Buenos_Aires", "America/Buenos_Aires"},
         {"America/Argentina/Catamarca", "America/Catamarca"},
         {"America/Argentina/ComodRivadavia", "America/Catamarca"},
@@ -1214,22 +1246,32 @@ TimeZoneTest::TestAliasedNames()
         {"America/Argentina/Mendoza", "America/Mendoza"},
         {"America/Atka", "America/Adak"},
         {"America/Ensenada", "America/Tijuana"},
-        {"America/Fort_Wayne", "America/Indiana/Indianapolis"},
-        {"America/Indianapolis", "America/Indiana/Indianapolis"},
+        {"America/Fort_Wayne", "America/Indianapolis"},
+        {"America/Indiana/Indianapolis", "America/Indianapolis"},
+        {"America/Kentucky/Louisville", "America/Louisville"},
         {"America/Knox_IN", "America/Indiana/Knox"},
-        {"America/Louisville", "America/Kentucky/Louisville"},
         {"America/Porto_Acre", "America/Rio_Branco"},
         {"America/Rosario", "America/Cordoba"},
-        {"America/Virgin", "America/St_Thomas"},
+        {"America/Shiprock", "America/Denver"},
+        {"America/Virgin", "America/Anguilla"},
+        {"Antarctica/South_Pole", "Antarctica/McMurdo"},
         {"Asia/Ashkhabad", "Asia/Ashgabat"},
-        {"Asia/Chungking", "Asia/Chongqing"},
+        {"Asia/Chongqing", "Asia/Shanghai"},
+        {"Asia/Chungking", "Asia/Shanghai"},
         {"Asia/Dacca", "Asia/Dhaka"},
+        {"Asia/Harbin", "Asia/Shanghai"},
+        {"Asia/Ho_Chi_Minh", "Asia/Saigon"},
         {"Asia/Istanbul", "Europe/Istanbul"},
+        {"Asia/Kashgar", "Asia/Urumqi"},
+        {"Asia/Kathmandu", "Asia/Katmandu"},
+        {"Asia/Kolkata", "Asia/Calcutta"},
         {"Asia/Macao", "Asia/Macau"},
         {"Asia/Tel_Aviv", "Asia/Jerusalem"},
         {"Asia/Thimbu", "Asia/Thimphu"},
         {"Asia/Ujung_Pandang", "Asia/Makassar"},
         {"Asia/Ulan_Bator", "Asia/Ulaanbaatar"},
+        {"Atlantic/Faroe", "Atlantic/Faeroe"},
+        {"Atlantic/Jan_Mayen", "Arctic/Longyearbyen"},
         {"Australia/ACT", "Australia/Sydney"},
         {"Australia/Canberra", "Australia/Sydney"},
         {"Australia/LHI", "Australia/Lord_Howe"},
@@ -1257,16 +1299,16 @@ TimeZoneTest::TestAliasedNames()
         {"Chile/Continental", "America/Santiago"},
         {"Chile/EasterIsland", "Pacific/Easter"},
         {"Cuba", "America/Havana"},
+        {"EST", "Etc/GMT+5"},
         {"Egypt", "Africa/Cairo"},
         {"Eire", "Europe/Dublin"},
         {"Etc/GMT+0", "Etc/GMT"},
         {"Etc/GMT-0", "Etc/GMT"},
         {"Etc/GMT0", "Etc/GMT"},
         {"Etc/Greenwich", "Etc/GMT"},
-        {"Etc/UCT", "Etc/GMT"},
-        {"Etc/UTC", "Etc/GMT"},
-        {"Etc/Universal", "Etc/GMT"},
-        {"Etc/Zulu", "Etc/GMT"},
+        {"Etc/UCT", "Etc/UTC"},
+        {"Etc/Universal", "Etc/UTC"},
+        {"Etc/Zulu", "Etc/UTC"},
         {"Europe/Belfast", "Europe/London"},
         {"Europe/Nicosia", "Asia/Nicosia"},
         {"Europe/Tiraspol", "Europe/Chisinau"},
@@ -1277,6 +1319,7 @@ TimeZoneTest::TestAliasedNames()
         {"GMT-0", "Etc/GMT"},
         {"GMT0", "Etc/GMT"},
         {"Greenwich", "Etc/GMT"},
+        {"HST", "Etc/GMT+10"},
         {"Hongkong", "Asia/Hong_Kong"},
         {"Iceland", "Atlantic/Reykjavik"},
         {"Iran", "Asia/Tehran"},
@@ -1285,27 +1328,37 @@ TimeZoneTest::TestAliasedNames()
         {"Japan", "Asia/Tokyo"},
         {"Kwajalein", "Pacific/Kwajalein"},
         {"Libya", "Africa/Tripoli"},
+        {"MST", "Etc/GMT+7"},
         {"Mexico/BajaNorte", "America/Tijuana"},
         {"Mexico/BajaSur", "America/Mazatlan"},
         {"Mexico/General", "America/Mexico_City"},
-        {"NZ", "Pacific/Auckland"},
+        {"NZ", "Antarctica/McMurdo"},
         {"NZ-CHAT", "Pacific/Chatham"},
-        {"Navajo", "America/Shiprock"},
+        {"Navajo", "America/Denver"},
         {"PRC", "Asia/Shanghai"},
-        {"Pacific/Samoa", "Pacific/Pago_Pago"},
+        {"Pacific/Chuuk", "Pacific/Truk"},
+        {"Pacific/Pohnpei", "Pacific/Ponape"},
+        {"Pacific/Samoa", "Pacific/Midway"},
         {"Pacific/Yap", "Pacific/Truk"},
         {"Poland", "Europe/Warsaw"},
         {"Portugal", "Europe/Lisbon"},
         {"ROC", "Asia/Taipei"},
         {"ROK", "Asia/Seoul"},
         {"Singapore", "Asia/Singapore"},
+        {"SystemV/AST4", "Etc/GMT+4"},
+        {"SystemV/CST6", "Etc/GMT+6"},
+        {"SystemV/EST5", "Etc/GMT+5"},
+        {"SystemV/HST10", "Etc/GMT+10"},
+        {"SystemV/MST7", "Etc/GMT+7"},
+        {"SystemV/PST8", "Etc/GMT+8"},
+        {"SystemV/YST9", "Etc/GMT+9"},
         {"Turkey", "Europe/Istanbul"},
-        {"UCT", "Etc/GMT"},
+        {"UCT", "Etc/UTC"},
         {"US/Alaska", "America/Anchorage"},
         {"US/Aleutian", "America/Adak"},
         {"US/Arizona", "America/Phoenix"},
         {"US/Central", "America/Chicago"},
-        {"US/East-Indiana", "America/Indiana/Indianapolis"},
+        {"US/East-Indiana", "America/Indianapolis"},
         {"US/Eastern", "America/New_York"},
         {"US/Hawaii", "Pacific/Honolulu"},
         {"US/Indiana-Starke", "America/Indiana/Knox"},
@@ -1313,13 +1366,12 @@ TimeZoneTest::TestAliasedNames()
         {"US/Mountain", "America/Denver"},
         {"US/Pacific", "America/Los_Angeles"},
         {"US/Pacific-New", "America/Los_Angeles"},
-        {"US/Samoa", "Pacific/Pago_Pago"},
-        {"UTC", "Etc/GMT"},
-        {"Universal", "Etc/GMT"},
+        {"US/Samoa", "Pacific/Midway"},
+        {"UTC", "Etc/UTC"},
+        {"Universal", "Etc/UTC"},
         {"W-SU", "Europe/Moscow"},
-        {"Zulu", "Etc/GMT"},
-        /* Total: 113 */
-
+        {"Zulu", "Etc/UTC"},
+        /* Total: 136 */
     };
 
     TimeZone::EDisplayType styles[] = { TimeZone::SHORT, TimeZone::LONG };
@@ -1691,8 +1743,8 @@ void TimeZoneTest::TestCountries() {
     // Asia/Tokyo isn't.  Vice versa for the "JP" group.
     UErrorCode ec = U_ZERO_ERROR;
     int32_t n;
-    StringEnumeration* s = TimeZone::createEnumeration("US");
-    if (s == NULL) {
+    StringEnumeration* s = TimeZone::createEnumerationForRegion("US", ec);
+    if (U_FAILURE(ec)) {
         dataerrln("Unable to create TimeZone enumeration for US");
         return;
     }
@@ -1702,7 +1754,7 @@ void TimeZoneTest::TestCountries() {
     UnicodeString tokyoZone("Asia/Tokyo", "");
     int32_t i;
 
-    if (s == NULL || n <= 0) {
+    if (n <= 0) {
         dataerrln("FAIL: TimeZone::createEnumeration() returned nothing");
         return;
     }
@@ -1721,7 +1773,11 @@ void TimeZoneTest::TestCountries() {
     }
     delete s;
     
-    s = TimeZone::createEnumeration("JP");
+    s = TimeZone::createEnumerationForRegion("JP", ec);
+    if (U_FAILURE(ec)) {
+        dataerrln("Unable to create TimeZone enumeration for JP");
+        return;
+    }
     n = s->count(ec);
     la = FALSE; tokyo = FALSE;
     
@@ -1738,8 +1794,12 @@ void TimeZoneTest::TestCountries() {
         errln("FAIL: " + laZone + " in JP = " + la);
         errln("FAIL: " + tokyoZone + " in JP = " + tokyo);
     }
-    StringEnumeration* s1 = TimeZone::createEnumeration("US");
-    StringEnumeration* s2 = TimeZone::createEnumeration("US");
+    StringEnumeration* s1 = TimeZone::createEnumerationForRegion("US", ec);
+    StringEnumeration* s2 = TimeZone::createEnumerationForRegion("US", ec);
+    if (U_FAILURE(ec)) {
+        dataerrln("Unable to create TimeZone enumeration for US");
+        return;
+    }
     for(i=0;i<n;++i){
         const UnicodeString* id1 = s1->snext(ec);
         if(id1==NULL || U_FAILURE(ec)){
@@ -1976,12 +2036,20 @@ void TimeZoneTest::TestCanonicalIDAPI() {
 
 void TimeZoneTest::TestCanonicalID() {
 
-    // Some canonical IDs in CLDR are defined as "Link"
-    // in Olson tzdata.
+    // Olson (IANA) tzdata used to have very few "Link"s long time ago.
+    // This test case was written when most of CLDR canonical time zones are
+    // defined as independent "Zone" in the TZ database.
+    // Since then, the TZ maintainer found some historic rules in mid 20th century
+    // were not really reliable, and many zones are now sharing rules.
+    // As of TZ database release 2022a, there are quite a lot of zones defined
+    // by "Link" to another zone, so the exception table below becomes really
+    // big. It might be still useful to make sure CLDR zone aliases are consistent
+    // with zone rules.
     static const struct {
-        const char *alias;
-        const char *zone;
+        const char *alias;  // link-from
+        const char *zone;   // link-to (A zone ID with "Zone" rule)
     } excluded1[] = {
+        {"Africa/Accra", "Africa/Abidjan"},
         {"Africa/Addis_Ababa", "Africa/Nairobi"},
         {"Africa/Asmera", "Africa/Nairobi"},
         {"Africa/Bamako", "Africa/Abidjan"},
@@ -2016,34 +2084,43 @@ void TimeZoneTest::TestCanonicalID() {
         {"Africa/Ouagadougou", "Africa/Abidjan"},
         {"Africa/Porto-Novo", "Africa/Lagos"},
         {"Africa/Sao_Tome", "Africa/Abidjan"},
-        {"America/Antigua", "America/Port_of_Spain"},
-        {"America/Anguilla", "America/Port_of_Spain"},
-        {"America/Curacao", "America/Aruba"},
-        {"America/Dominica", "America/Port_of_Spain"},
-        {"America/Grenada", "America/Port_of_Spain"},
-        {"America/Guadeloupe", "America/Port_of_Spain"},
-        {"America/Kralendijk", "America/Aruba"},
-        {"America/Lower_Princes", "America/Aruba"},
-        {"America/Marigot", "America/Port_of_Spain"},
-        {"America/Montserrat", "America/Port_of_Spain"},
-        {"America/Panama", "America/Cayman"},
+        {"America/Antigua", "America/Puerto_Rico"},
+        {"America/Anguilla", "America/Puerto_Rico"},
+        {"America/Aruba", "America/Puerto_Rico"},
+        {"America/Atikokan", "America/Panama"},
+        {"America/Blanc-Sablon", "America/Puerto_Rico"},
+        {"America/Cayman", "America/Panama"},
+        {"America/Coral_Harbour", "America/Panama"},
+        {"America/Creston", "America/Phoenix"},
+        {"America/Curacao", "America/Puerto_Rico"},
+        {"America/Dominica", "America/Puerto_Rico"},
+        {"America/Grenada", "America/Puerto_Rico"},
+        {"America/Guadeloupe", "America/Puerto_Rico"},
+        {"America/Kralendijk", "America/Puerto_Rico"},
+        {"America/Lower_Princes", "America/Puerto_Rico"},
+        {"America/Marigot", "America/Puerto_Rico"},
+        {"America/Montreal", "America/Toronto"},
+        {"America/Montserrat", "America/Puerto_Rico"},
+        {"America/Nassau", "America/Toronto"},
+        {"America/Port_of_Spain", "America/Puerto_Rico"},
         {"America/Santa_Isabel", "America/Tijuana"},
         {"America/Shiprock", "America/Denver"},
-        {"America/St_Barthelemy", "America/Port_of_Spain"},
-        {"America/St_Kitts", "America/Port_of_Spain"},
-        {"America/St_Lucia", "America/Port_of_Spain"},
-        {"America/St_Thomas", "America/Port_of_Spain"},
-        {"America/St_Vincent", "America/Port_of_Spain"},
-        {"America/Toronto", "America/Montreal"},
-        {"America/Tortola", "America/Port_of_Spain"},
-        {"America/Virgin", "America/Port_of_Spain"},
+        {"America/St_Barthelemy", "America/Puerto_Rico"},
+        {"America/St_Kitts", "America/Puerto_Rico"},
+        {"America/St_Lucia", "America/Puerto_Rico"},
+        {"America/St_Thomas", "America/Puerto_Rico"},
+        {"America/St_Vincent", "America/Puerto_Rico"},
+        {"America/Tortola", "America/Puerto_Rico"},
+        {"America/Virgin", "America/Puerto_Rico"},
+        {"Antarctica/DumontDUrville", "Pacific/Port_Moresby"},
         {"Antarctica/South_Pole", "Antarctica/McMurdo"},
+        {"Antarctica/Syowa", "Asia/Riyadh"},
         {"Arctic/Longyearbyen", "Europe/Oslo"},
-        {"Asia/Kuwait", "Asia/Aden"},
+        {"Asia/Aden", "Asia/Riyadh"},
+        {"Asia/Kuwait", "Asia/Riyadh"},
         {"Asia/Muscat", "Asia/Dubai"},
         {"Asia/Phnom_Penh", "Asia/Bangkok"},
         {"Asia/Qatar", "Asia/Bahrain"},
-        {"Asia/Riyadh", "Asia/Aden"},
         {"Asia/Vientiane", "Asia/Bangkok"},
         {"Atlantic/Jan_Mayen", "Europe/Oslo"},
         {"Atlantic/St_Helena", "Africa/Abidjan"},
@@ -2089,8 +2166,8 @@ void TimeZoneTest::TestCanonicalID() {
     // Walk through equivalency groups
     UErrorCode ec = U_ZERO_ERROR;
     int32_t s_length, i, j, k;
-    StringEnumeration* s = TimeZone::createEnumeration();
-    if (s == NULL) {
+    StringEnumeration* s = TimeZone::createEnumeration(ec);
+    if (U_FAILURE(ec)) {
         dataerrln("Unable to create TimeZone enumeration");
         return;
     }
@@ -2228,8 +2305,11 @@ static struct   {
        
       {"America/Sao_Paulo",  "en", FALSE, TimeZone::SHORT, "GMT-3"/*"BRT"*/},
       {"America/Sao_Paulo",  "en", FALSE, TimeZone::LONG,  "Brasilia Standard Time"},
-      {"America/Sao_Paulo",  "en", TRUE,  TimeZone::SHORT, "GMT-2"/*"BRST"*/},
-      {"America/Sao_Paulo",  "en", TRUE,  TimeZone::LONG,  "Brasilia Summer Time"},
+
+      // Per https://mm.icann.org/pipermail/tz-announce/2019-July/000056.html
+      //      Brazil has canceled DST and will stay on standard time indefinitely.
+      // {"America/Sao_Paulo",  "en", TRUE,  TimeZone::SHORT, "GMT-2"/*"BRST"*/},
+      // {"America/Sao_Paulo",  "en", TRUE,  TimeZone::LONG,  "Brasilia Summer Time"},
        
       // No Summer Time, but had it before 1983.
       {"Pacific/Honolulu",   "en", FALSE, TimeZone::SHORT, "HST"},
@@ -2395,6 +2475,15 @@ void TimeZoneTest::TestGetUnknown() {
     assertEquals("getUnknown() wrong ID", expectedID, unknown.getID(id));
     assertTrue("getUnknown() wrong offset", 0 == unknown.getRawOffset());
     assertFalse("getUnknown() uses DST", unknown.useDaylightTime());
+}
+
+void TimeZoneTest::TestGetGMT() {
+    const TimeZone *gmt = TimeZone::getGMT();
+    UnicodeString expectedID = UNICODE_STRING_SIMPLE("GMT");
+    UnicodeString id;
+    assertEquals("getGMT() wrong ID", expectedID, gmt->getID(id));
+    assertTrue("getGMT() wrong offset", 0 == gmt->getRawOffset());
+    assertFalse("getGMT() uses DST", gmt->useDaylightTime());
 }
 
 void TimeZoneTest::TestGetWindowsID(void) {
