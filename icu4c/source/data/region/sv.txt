@@ -183,7 +183,7 @@ sv{
         MF{"Saint-Martin"}
         MG{"Madagaskar"}
         MH{"Marshallöarna"}
-        MK{"f.d. jugoslaviska republiken Makedonien"}
+        MK{"Nordmakedonien"}
         ML{"Mali"}
         MM{"Myanmar (Burma)"}
         MN{"Mongoliet"}

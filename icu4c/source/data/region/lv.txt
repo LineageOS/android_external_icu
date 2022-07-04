@@ -183,7 +183,7 @@ lv{
         MF{"Senmartēna"}
         MG{"Madagaskara"}
         MH{"Māršala salas"}
-        MK{"bijusī Dienvidslāvijas Maķedonijas Republika"}
+        MK{"Ziemeļmaķedonija"}
         ML{"Mali"}
         MM{"Mjanma (Birma)"}
         MN{"Mongolija"}

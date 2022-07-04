@@ -183,7 +183,7 @@ lt{
         MF{"Sen Martenas"}
         MG{"Madagaskaras"}
         MH{"Maršalo Salos"}
-        MK{"Makedonijos Respublika"}
+        MK{"Šiaurės Makedonija"}
         ML{"Malis"}
         MM{"Mianmaras (Birma)"}
         MN{"Mongolija"}

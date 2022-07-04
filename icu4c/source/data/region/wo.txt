@@ -140,7 +140,7 @@ wo{
         MF{"Saŋ Marteŋ"}
         MG{"Madagaskaar"}
         MH{"Duni Marsaal"}
-        MK{"Maseduwaan (Réewum yugoslawi gu yàgg ga)"}
+        MK{"Maseduwaan bëj Gànnaar"}
         ML{"Mali"}
         MM{"Miyanmaar"}
         MN{"Mongoli"}

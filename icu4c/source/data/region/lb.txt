@@ -181,7 +181,7 @@ lb{
         MF{"St. Martin"}
         MG{"Madagaskar"}
         MH{"Marshallinselen"}
-        MK{"Mazedonien (EJR)"}
+        MK{"Nordmazedonien"}
         ML{"Mali"}
         MM{"Myanmar"}
         MN{"Mongolei"}

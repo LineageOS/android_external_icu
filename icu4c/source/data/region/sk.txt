@@ -183,7 +183,7 @@ sk{
         MF{"Svätý Martin (fr.)"}
         MG{"Madagaskar"}
         MH{"Marshallove ostrovy"}
-        MK{"Macedónsko (BJRM)"}
+        MK{"Severné Macedónsko"}
         ML{"Mali"}
         MM{"Mjanmarsko"}
         MN{"Mongolsko"}

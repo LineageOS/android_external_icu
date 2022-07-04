@@ -183,7 +183,7 @@ cs{
         MF{"Svatý Martin (Francie)"}
         MG{"Madagaskar"}
         MH{"Marshallovy ostrovy"}
-        MK{"Makedonie (FYROM)"}
+        MK{"Severní Makedonie"}
         ML{"Mali"}
         MM{"Myanmar (Barma)"}
         MN{"Mongolsko"}

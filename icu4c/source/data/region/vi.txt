@@ -183,7 +183,7 @@ vi{
         MF{"St. Martin"}
         MG{"Madagascar"}
         MH{"Quần đảo Marshall"}
-        MK{"Macedonia (FYROM)"}
+        MK{"Bắc Macedonia"}
         ML{"Mali"}
         MM{"Myanmar (Miến Điện)"}
         MN{"Mông Cổ"}

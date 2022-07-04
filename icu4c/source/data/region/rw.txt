@@ -2,6 +2,7 @@
 // License & terms of use: http://www.unicode.org/copyright.html#License
 rw{
     Countries{
+        MK{"Masedoniya y'Amajyaruguru"}
         RW{"U Rwanda"}
         TO{"Tonga"}
     }

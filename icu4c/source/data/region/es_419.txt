@@ -23,6 +23,7 @@ es_419{
         GG{"Guernesey"}
         IC{"Islas Canarias"}
         QO{"Islas Ultramarinas"}
+        SZ{"Suazilandia"}
         TA{"Tristán da Cunha"}
         TL{"Timor Oriental"}
         UM{"Islas Ultramarinas de EE.UU."}

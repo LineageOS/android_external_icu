@@ -183,7 +183,7 @@ so{
         MF{"St. Maartin"}
         MG{"Madagaskar"}
         MH{"Jasiiradda Maarshal"}
-        MK{"Masedooniya"}
+        MK{"Masedooniya Waqooyi"}
         ML{"Maali"}
         MM{"Miyanmar"}
         MN{"Mongooliya"}
@@ -253,7 +253,7 @@ so{
         SV{"El Salfadoor"}
         SX{"Siint Maarteen"}
         SY{"Suuriya"}
-        SZ{"Iswaasilaand"}
+        SZ{"Eswaatiini"}
         TA{"Tiristan da Kunha"}
         TC{"Turks & Kaikos Island"}
         TD{"Jaad"}
@@ -303,6 +303,7 @@ so{
         CD{"Jamhuuriyadda Dimuqaadiga Kongo"}
         CG{"Jamhuuriyadda Kongo"}
         CZ{"Jamhuuriyadda Jek"}
+        SZ{"Iswaasilaan"}
         TL{"Timoor Bari"}
     }
     Version{"2.1.43.94"}

@@ -183,7 +183,7 @@ fil{
         MF{"Saint Martin"}
         MG{"Madagascar"}
         MH{"Marshall Islands"}
-        MK{"Macedonia (FYROM)"}
+        MK{"North Macedonia"}
         ML{"Mali"}
         MM{"Myanmar (Burma)"}
         MN{"Mongolia"}

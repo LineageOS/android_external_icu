@@ -21,6 +21,7 @@ es_MX{
         EZ{"zona euro"}
         GG{"Guernsey"}
         SA{"Arabia Saudita"}
+        SZ{"Eswatini"}
         TA{"Tristán de Acuña"}
         TL{"Timor-Leste"}
         UM{"Islas menores alejadas de EE. UU."}

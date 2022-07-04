@@ -183,7 +183,7 @@ ro{
         MF{"Sfântul Martin"}
         MG{"Madagascar"}
         MH{"Insulele Marshall"}
-        MK{"Republica Macedonia (FRIM)"}
+        MK{"Macedonia de Nord"}
         ML{"Mali"}
         MM{"Myanmar (Birmania)"}
         MN{"Mongolia"}
@@ -253,7 +253,7 @@ ro{
         SV{"El Salvador"}
         SX{"Sint-Maarten"}
         SY{"Siria"}
-        SZ{"Swaziland"}
+        SZ{"eSwatini"}
         TA{"Tristan da Cunha"}
         TC{"Insulele Turks și Caicos"}
         TD{"Ciad"}
@@ -305,6 +305,7 @@ ro{
         CG{"Congo (Republica)"}
         CI{"Coasta de Fildeș"}
         CZ{"Republica Cehă"}
+        SZ{"Swaziland"}
         TL{"Timorul de Est"}
     }
     Version{"2.1.43.94"}

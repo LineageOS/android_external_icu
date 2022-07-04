@@ -183,7 +183,7 @@ az{
         MF{"Sent Martin"}
         MG{"Madaqaskar"}
         MH{"Marşal adaları"}
-        MK{"Makedoniya (KYRM)"}
+        MK{"Şimali Makedoniya"}
         ML{"Mali"}
         MM{"Myanma"}
         MN{"Monqolustan"}
@@ -253,7 +253,7 @@ az{
         SV{"Salvador"}
         SX{"Sint-Marten"}
         SY{"Suriya"}
-        SZ{"Svazilend"}
+        SZ{"Esvatini"}
         TA{"Tristan da Kunya"}
         TC{"Törks və Kaykos adaları"}
         TD{"Çad"}
@@ -305,6 +305,7 @@ az{
         CG{"Konqo (Respublika)"}
         CI{"Fil Dişi Sahili"}
         CZ{"Çex Respublikası"}
+        SZ{"Svazilend"}
         TL{"Doğu Timor"}
     }
     Version{"2.1.44.53"}

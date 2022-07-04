@@ -183,7 +183,7 @@ fi{
         MF{"Saint-Martin"}
         MG{"Madagaskar"}
         MH{"Marshallinsaaret"}
-        MK{"EJT Makedonia"}
+        MK{"Pohjois-Makedonia"}
         ML{"Mali"}
         MM{"Myanmar (Burma)"}
         MN{"Mongolia"}

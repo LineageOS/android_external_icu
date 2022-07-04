@@ -183,7 +183,7 @@ tk{
         MF{"Sen-Marten"}
         MG{"Madagaskar"}
         MH{"Marşall adalary"}
-        MK{"Makedoniýa (ÖÝR)"}
+        MK{"Demirgazyk Makedoniýa"}
         ML{"Mali"}
         MM{"Mýanma (Burma)"}
         MN{"Mongoliýa"}

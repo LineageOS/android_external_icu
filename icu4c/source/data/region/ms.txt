@@ -183,7 +183,7 @@ ms{
         MF{"Saint Martin"}
         MG{"Madagaskar"}
         MH{"Kepulauan Marshall"}
-        MK{"Macedonia (FYROM)"}
+        MK{"Macedonia Utara"}
         ML{"Mali"}
         MM{"Myanmar (Burma)"}
         MN{"Mongolia"}

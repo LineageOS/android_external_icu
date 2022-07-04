@@ -305,6 +305,7 @@ zu{
         CG{"i-Congo (Republic)"}
         CI{"i-Ivory Coast"}
         CZ{"i-Czech Republic"}
+        SZ{"SZ"}
         TL{"i-East Timor"}
     }
     Version{"2.1.43.65"}

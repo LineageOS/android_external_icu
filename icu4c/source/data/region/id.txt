@@ -183,7 +183,7 @@ id{
         MF{"Saint Martin"}
         MG{"Madagaskar"}
         MH{"Kepulauan Marshall"}
-        MK{"Makedonia (BRY)"}
+        MK{"Makedonia Utara"}
         ML{"Mali"}
         MM{"Myanmar (Burma)"}
         MN{"Mongolia"}
@@ -253,7 +253,7 @@ id{
         SV{"El Salvador"}
         SX{"Sint Maarten"}
         SY{"Suriah"}
-        SZ{"Swaziland"}
+        SZ{"eSwatini"}
         TA{"Tristan da Cunha"}
         TC{"Kepulauan Turks dan Caicos"}
         TD{"Cad"}
@@ -304,6 +304,7 @@ id{
         CD{"Kongo (RDK)"}
         CG{"Kongo (Republik)"}
         CZ{"Republik Ceko"}
+        SZ{"Swaziland"}
     }
     Version{"2.1.44.20"}
 }

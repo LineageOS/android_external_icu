@@ -183,7 +183,7 @@ gd{
         MF{"Naomh Màrtainn"}
         MG{"Madagasgar"}
         MH{"Eileanan Mharshall"}
-        MK{"A’ Mhasadon (FYROM)"}
+        MK{"A’ Mhasadon a Tuath"}
         ML{"Màili"}
         MM{"Miànmar"}
         MN{"Dùthaich nam Mongol"}

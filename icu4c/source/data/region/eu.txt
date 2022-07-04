@@ -183,7 +183,7 @@ eu{
         MF{"San Martin"}
         MG{"Madagaskar"}
         MH{"Marshall Uharteak"}
-        MK{"Mazedoniako Jugoslaviar Errepublika Ohia"}
+        MK{"Ipar Mazedonia"}
         ML{"Mali"}
         MM{"Myanmar (Birmania)"}
         MN{"Mongolia"}

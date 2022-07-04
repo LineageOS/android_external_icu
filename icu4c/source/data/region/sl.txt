@@ -183,7 +183,7 @@ sl{
         MF{"Saint Martin"}
         MG{"Madagaskar"}
         MH{"Marshallovi otoki"}
-        MK{"Makedonija (FYROM)"}
+        MK{"Severna Makedonija"}
         ML{"Mali"}
         MM{"Mjanmar (Burma)"}
         MN{"Mongolija"}

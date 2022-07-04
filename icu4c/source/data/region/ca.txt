@@ -183,7 +183,7 @@ ca{
         MF{"Saint Martin"}
         MG{"Madagascar"}
         MH{"Illes Marshall"}
-        MK{"Macedònia (Antiga República Iugoslava de Macedònia)"}
+        MK{"Macedònia del Nord"}
         ML{"Mali"}
         MM{"Myanmar (Birmània)"}
         MN{"Mongòlia"}
