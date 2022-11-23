@@ -924,8 +924,9 @@ LocaleTest::TestGetLangsAndCountries()
       ;
 
     /* TODO: Change this test to be more like the cloctst version? */
-    if (testCount != 594)
-        errln("Expected getISOLanguages() to return 594 languages; it returned %d", testCount);
+    // Allow more than a min number of languages provided in AOSP
+    if (testCount < 594)
+        errln("Expected getISOLanguages() to return at least 594 languages; it returned %d", testCount);
     else {
         for (i = 0; i < 15; i++) {
             int32_t j;
