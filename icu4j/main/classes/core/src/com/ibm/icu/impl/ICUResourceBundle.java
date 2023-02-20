@@ -1304,18 +1304,22 @@ public  class ICUResourceBundle extends UResourceBundle {
 
             // fallback to locale ID parent
             if(b == null){
+                OpenType localOpenType = openType;
+                if (openType == OpenType.LOCALE_DEFAULT_ROOT && localeName.equals(defaultID)) {
+                    localOpenType = OpenType.LOCALE_ROOT;
+                }
                 int i = localeName.lastIndexOf('_');
                 if (i != -1) {
                     // Chop off the last underscore and the subtag after that.
                     String temp = localeName.substring(0, i);
-                    b = instantiateBundle(baseName, temp, defaultID, root, openType);
+                    b = instantiateBundle(baseName, temp, defaultID, root, localOpenType);
                 }else{
                     // No underscore, only a base language subtag.
-                    if(openType == OpenType.LOCALE_DEFAULT_ROOT &&
+                    if(localOpenType == OpenType.LOCALE_DEFAULT_ROOT &&
                             !localeIDStartsWithLangSubtag(defaultID, localeName)) {
                         // Go to the default locale before root.
-                        b = instantiateBundle(baseName, defaultID, defaultID, root, openType);
-                    } else if(openType != OpenType.LOCALE_ONLY && !rootLocale.isEmpty()) {
+                        b = instantiateBundle(baseName, defaultID, defaultID, root, localOpenType);
+                    } else if(localOpenType != OpenType.LOCALE_ONLY && !rootLocale.isEmpty()) {
                         // Ultimately go to root.
                         b = ICUResourceBundle.createBundle(baseName, rootLocale, root);
                     }
