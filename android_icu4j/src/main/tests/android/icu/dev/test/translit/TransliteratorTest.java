@@ -2589,7 +2589,6 @@ public class TransliteratorTest extends TestFmwk {
         }
     }
 
-
     static final String[][] registerRules = {
         {"Any-Dev1", "x > X; y > Y;"},
         {"Any-Dev2", "XY > Z"},
