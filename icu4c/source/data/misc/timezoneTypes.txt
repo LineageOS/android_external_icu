@@ -5,9 +5,21 @@ timezoneTypes:table(nofallback){
     bcpTypeAlias{
         tz{
             aqams{"nzakl"}
+            aukns{"auhba"}
+            caffs{"cawnp"}
+            camtr{"cator"}
+            canpg{"cator"}
+            capnt{"caiql"}
+            cathu{"cator"}
+            cayzf{"caedm"}
             cnckg{"cnsha"}
             cnhrb{"cnsha"}
             cnkhg{"cnurc"}
+            gaza{"gazastrp"}
+            mxstis{"mxtij"}
+            uaozh{"uaiev"}
+            uauzh{"uaiev"}
+            umjon{"ushnl"}
             usnavajo{"usden"}
         }
     }
@@ -28,11 +40,18 @@ timezoneTypes:table(nofallback){
             "America:Indiana:Indianapolis"{"America/Indianapolis"}
             "America:Kentucky:Louisville"{"America/Louisville"}
             "America:Knox_IN"{"America/Indiana/Knox"}
+            "America:Montreal"{"America/Toronto"}
+            "America:Nipigon"{"America/Toronto"}
             "America:Nuuk"{"America/Godthab"}
+            "America:Pangnirtung"{"America/Iqaluit"}
             "America:Porto_Acre"{"America/Rio_Branco"}
+            "America:Rainy_River"{"America/Winnipeg"}
             "America:Rosario"{"America/Cordoba"}
+            "America:Santa_Isabel"{"America/Tijuana"}
             "America:Shiprock"{"America/Denver"}
+            "America:Thunder_Bay"{"America/Toronto"}
             "America:Virgin"{"America/St_Thomas"}
+            "America:Yellowknife"{"America/Edmonton"}
             "Antarctica:South_Pole"{"Pacific/Auckland"}
             "Asia:Ashkhabad"{"Asia/Ashgabat"}
             "Asia:Chongqing"{"Asia/Shanghai"}
@@ -54,6 +73,7 @@ timezoneTypes:table(nofallback){
             "Atlantic:Jan_Mayen"{"Arctic/Longyearbyen"}
             "Australia:ACT"{"Australia/Sydney"}
             "Australia:Canberra"{"Australia/Sydney"}
+            "Australia:Currie"{"Australia/Hobart"}
             "Australia:LHI"{"Australia/Lord_Howe"}
             "Australia:NSW"{"Australia/Sydney"}
             "Australia:North"{"Australia/Darwin"}
@@ -89,10 +109,13 @@ timezoneTypes:table(nofallback){
             "Europe:Kyiv"{"Europe/Kiev"}
             "Europe:Nicosia"{"Asia/Nicosia"}
             "Europe:Tiraspol"{"Europe/Chisinau"}
+            "Europe:Uzhgorod"{"Europe/Kiev"}
+            "Europe:Zaporozhye"{"Europe/Kiev"}
             "Mexico:BajaNorte"{"America/Tijuana"}
             "Mexico:BajaSur"{"America/Mazatlan"}
             "Mexico:General"{"America/Mexico_City"}
             "Pacific:Chuuk"{"Pacific/Truk"}
+            "Pacific:Johnston"{"Pacific/Honolulu"}
             "Pacific:Kanton"{"Pacific/Enderbury"}
             "Pacific:Pohnpei"{"Pacific/Ponape"}
             "Pacific:Samoa"{"Pacific/Pago_Pago"}
@@ -301,11 +324,9 @@ timezoneTypes:table(nofallback){
             "America:Moncton"{"camon"}
             "America:Monterrey"{"mxmty"}
             "America:Montevideo"{"uymvd"}
-            "America:Montreal"{"camtr"}
             "America:Montserrat"{"msmni"}
             "America:Nassau"{"bsnas"}
             "America:New_York"{"usnyc"}
-            "America:Nipigon"{"canpg"}
             "America:Nome"{"usome"}
             "America:Noronha"{"brfen"}
             "America:North_Dakota:Beulah"{"usxul"}
@@ -313,7 +334,6 @@ timezoneTypes:table(nofallback){
             "America:North_Dakota:New_Salem"{"usndnsl"}
             "America:Ojinaga"{"mxoji"}
             "America:Panama"{"papty"}
-            "America:Pangnirtung"{"capnt"}
             "America:Paramaribo"{"srpbm"}
             "America:Phoenix"{"usphx"}
             "America:Port-au-Prince"{"htpap"}
@@ -321,13 +341,11 @@ timezoneTypes:table(nofallback){
             "America:Porto_Velho"{"brpvh"}
             "America:Puerto_Rico"{"prsju"}
             "America:Punta_Arenas"{"clpuq"}
-            "America:Rainy_River"{"caffs"}
             "America:Rankin_Inlet"{"cayek"}
             "America:Recife"{"brrec"}
             "America:Regina"{"careg"}
             "America:Resolute"{"careb"}
             "America:Rio_Branco"{"brrbr"}
-            "America:Santa_Isabel"{"mxstis"}
             "America:Santarem"{"brstm"}
             "America:Santiago"{"clscl"}
             "America:Santo_Domingo"{"dosdq"}
@@ -343,7 +361,6 @@ timezoneTypes:table(nofallback){
             "America:Swift_Current"{"cayyn"}
             "America:Tegucigalpa"{"hntgu"}
             "America:Thule"{"glthu"}
-            "America:Thunder_Bay"{"cathu"}
             "America:Tijuana"{"mxtij"}
             "America:Toronto"{"cator"}
             "America:Tortola"{"vgtov"}
@@ -351,7 +368,6 @@ timezoneTypes:table(nofallback){
             "America:Whitehorse"{"cayxy"}
             "America:Winnipeg"{"cawnp"}
             "America:Yakutat"{"usyak"}
-            "America:Yellowknife"{"cayzf"}
             "Antarctica:Casey"{"aqcas"}
             "Antarctica:Davis"{"aqdav"}
             "Antarctica:DumontDUrville"{"aqddu"}
@@ -390,7 +406,7 @@ timezoneTypes:table(nofallback){
             "Asia:Dubai"{"aedxb"}
             "Asia:Dushanbe"{"tjdyu"}
             "Asia:Famagusta"{"cyfmg"}
-            "Asia:Gaza"{"gaza"}
+            "Asia:Gaza"{"gazastrp"}
             "Asia:Hebron"{"hebron"}
             "Asia:Hong_Kong"{"hkhkg"}
             "Asia:Hovd"{"mnhvd"}
@@ -460,7 +476,6 @@ timezoneTypes:table(nofallback){
             "Australia:Adelaide"{"auadl"}
             "Australia:Brisbane"{"aubne"}
             "Australia:Broken_Hill"{"aubhq"}
-            "Australia:Currie"{"aukns"}
             "Australia:Darwin"{"audrw"}
             "Australia:Eucla"{"aueuc"}
             "Australia:Hobart"{"auhba"}
@@ -548,7 +563,6 @@ timezoneTypes:table(nofallback){
             "Europe:Tallinn"{"eetll"}
             "Europe:Tirane"{"altia"}
             "Europe:Ulyanovsk"{"ruuly"}
-            "Europe:Uzhgorod"{"uauzh"}
             "Europe:Vaduz"{"livdz"}
             "Europe:Vatican"{"vavat"}
             "Europe:Vienna"{"atvie"}
@@ -556,7 +570,6 @@ timezoneTypes:table(nofallback){
             "Europe:Volgograd"{"ruvog"}
             "Europe:Warsaw"{"plwaw"}
             "Europe:Zagreb"{"hrzag"}
-            "Europe:Zaporozhye"{"uaozh"}
             "Europe:Zurich"{"chzrh"}
             "Indian:Antananarivo"{"mgtnr"}
             "Indian:Chagos"{"iodga"}
@@ -584,7 +597,6 @@ timezoneTypes:table(nofallback){
             "Pacific:Guadalcanal"{"sbhir"}
             "Pacific:Guam"{"gugum"}
             "Pacific:Honolulu"{"ushnl"}
-            "Pacific:Johnston"{"umjon"}
             "Pacific:Kiritimati"{"kicxi"}
             "Pacific:Kosrae"{"fmksa"}
             "Pacific:Kwajalein"{"mhkwa"}
