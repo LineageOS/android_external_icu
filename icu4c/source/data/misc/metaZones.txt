@@ -2692,6 +2692,11 @@ metaZones:table(nofallback){
             {
                 "Kazakhstan_Eastern",
                 "2004-10-30 20:00",
+                "2024-02-29 18:00",
+            }
+            {
+                "Kazakhstan_Western",
+                "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
         }
@@ -3207,6 +3212,11 @@ metaZones:table(nofallback){
             {
                 "Kazakhstan_Eastern",
                 "2004-10-30 21:00",
+                "2024-02-29 18:00",
+            }
+            {
+                "Kazakhstan_Western",
+                "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
         }
