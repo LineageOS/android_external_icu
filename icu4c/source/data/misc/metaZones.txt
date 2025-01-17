@@ -217,9 +217,6 @@ metaZones:table(nofallback){
         China{
             001{"Asia/Shanghai"}
         }
-        Choibalsan{
-            001{"Asia/Choibalsan"}
-        }
         Christmas{
             001{"Indian/Christmas"}
         }
@@ -433,6 +430,9 @@ metaZones:table(nofallback){
         }
         Karachi{
             001{"Asia/Karachi"}
+        }
+        Kazakhstan{
+            001{"Asia/Almaty"}
         }
         Kazakhstan_Eastern{
             001{"Asia/Almaty"}
@@ -1332,13 +1332,8 @@ metaZones:table(nofallback){
         }
         "America:Bahia_Banderas"{
             {
-                "America_Pacific",
-                "1970-01-01 00:00",
-                "1970-01-01 08:00",
-            }
-            {
                 "America_Mountain",
-                "1970-01-01 08:00",
+                "1970-01-01 00:00",
                 "2010-04-04 09:00",
             }
             {
@@ -1423,11 +1418,21 @@ metaZones:table(nofallback){
             {
                 "America_Central",
                 "1970-01-01 00:00",
-                "1981-12-23 06:00",
+                "1981-12-26 08:00",
             }
             {
                 "America_Eastern",
-                "1981-12-23 06:00",
+                "1981-12-26 08:00",
+                "1983-01-04 05:00",
+            }
+            {
+                "America_Central",
+                "1983-01-04 05:00",
+                "1997-10-26 07:00",
+            }
+            {
+                "America_Eastern",
+                "1997-10-26 07:00",
                 "1998-08-02 06:00",
             }
             {
@@ -1742,14 +1747,7 @@ metaZones:table(nofallback){
         }
         "America:Hermosillo"{
             {
-                "America_Pacific",
-                "1970-01-01 00:00",
-                "1970-01-01 08:00",
-            }
-            {
                 "Mexico_Pacific",
-                "1970-01-01 08:00",
-                "9999-12-31 23:59",
             }
         }
         "America:Indiana:Knox"{
@@ -2045,14 +2043,7 @@ metaZones:table(nofallback){
         }
         "America:Mazatlan"{
             {
-                "America_Pacific",
-                "1970-01-01 00:00",
-                "1970-01-01 08:00",
-            }
-            {
                 "Mexico_Pacific",
-                "1970-01-01 08:00",
-                "9999-12-31 23:59",
             }
         }
         "America:Mendoza"{
@@ -2088,16 +2079,16 @@ metaZones:table(nofallback){
             {
                 "America_Central",
                 "1970-01-01 00:00",
-                "1981-12-23 06:00",
+                "1981-12-26 08:00",
             }
             {
                 "America_Eastern",
-                "1981-12-23 06:00",
-                "1982-12-02 05:00",
+                "1981-12-26 08:00",
+                "1982-11-02 07:00",
             }
             {
                 "America_Central",
-                "1982-12-02 05:00",
+                "1982-11-02 07:00",
                 "9999-12-31 23:59",
             }
         }
@@ -2695,7 +2686,7 @@ metaZones:table(nofallback){
                 "2024-02-29 18:00",
             }
             {
-                "Kazakhstan_Western",
+                "Kazakhstan",
                 "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
@@ -2738,6 +2729,11 @@ metaZones:table(nofallback){
             {
                 "Kazakhstan_Western",
                 "2004-10-30 22:00",
+                "2024-02-29 18:00",
+            }
+            {
+                "Kazakhstan",
+                "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
         }
@@ -2755,6 +2751,11 @@ metaZones:table(nofallback){
             {
                 "Kazakhstan_Western",
                 "2004-10-30 21:00",
+                "2024-02-29 18:00",
+            }
+            {
+                "Kazakhstan",
+                "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
         }
@@ -2774,6 +2775,11 @@ metaZones:table(nofallback){
             {
                 "Kazakhstan_Western",
                 "2004-10-30 22:00",
+                "2024-02-29 18:00",
+            }
+            {
+                "Kazakhstan",
+                "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
         }
@@ -2852,23 +2858,6 @@ metaZones:table(nofallback){
             {
                 "Yakutsk",
                 "2016-03-26 18:00",
-                "9999-12-31 23:59",
-            }
-        }
-        "Asia:Choibalsan"{
-            {
-                "Mongolia",
-                "1970-01-01 00:00",
-                "1983-03-31 16:00",
-            }
-            {
-                "Choibalsan",
-                "1983-03-31 16:00",
-                "2008-03-30 15:00",
-            }
-            {
-                "Mongolia",
-                "2008-03-30 15:00",
                 "9999-12-31 23:59",
             }
         }
@@ -3159,6 +3148,11 @@ metaZones:table(nofallback){
             {
                 "Kazakhstan_Western",
                 "2004-10-30 22:00",
+                "2024-02-29 18:00",
+            }
+            {
+                "Kazakhstan",
+                "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
         }
@@ -3215,7 +3209,7 @@ metaZones:table(nofallback){
                 "2024-02-29 18:00",
             }
             {
-                "Kazakhstan_Western",
+                "Kazakhstan",
                 "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
@@ -3239,6 +3233,11 @@ metaZones:table(nofallback){
             {
                 "Kazakhstan_Western",
                 "2018-12-20 18:00",
+                "2024-02-29 18:00",
+            }
+            {
+                "Kazakhstan",
+                "2024-02-29 18:00",
                 "9999-12-31 23:59",
             }
         }
@@ -3429,16 +3428,16 @@ metaZones:table(nofallback){
             {
                 "Azores",
                 "1970-01-01 00:00",
-                "1992-09-27 02:00",
+                "1992-12-27 02:00",
             }
             {
                 "Europe_Western",
-                "1992-09-27 02:00",
-                "1993-03-28 01:00",
+                "1992-12-27 02:00",
+                "1993-06-17 01:00",
             }
             {
                 "Azores",
-                "1993-03-28 01:00",
+                "1993-06-17 01:00",
                 "9999-12-31 23:59",
             }
         }
@@ -3547,16 +3546,6 @@ metaZones:table(nofallback){
         "Australia:Sydney"{
             {
                 "Australia_Eastern",
-            }
-        }
-        "CST6CDT"{
-            {
-                "America_Central",
-            }
-        }
-        "EST5EDT"{
-            {
-                "America_Eastern",
             }
         }
         "Etc:GMT"{
@@ -4107,16 +4096,6 @@ metaZones:table(nofallback){
         "Indian:Reunion"{
             {
                 "Reunion",
-            }
-        }
-        "MST7MDT"{
-            {
-                "America_Mountain",
-            }
-        }
-        "PST8PDT"{
-            {
-                "America_Pacific",
             }
         }
         "Pacific:Apia"{
