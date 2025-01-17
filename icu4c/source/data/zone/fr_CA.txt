@@ -225,8 +225,6 @@ fr_CA{
         }
         "meta:Choibalsan"{
             ld{"heure avancée de Choibalsan"}
-            lg{"heure de Choibalsan"}
-            ls{"heure normale de Choibalsan"}
         }
         "meta:Colombia"{
             ld{"heure avancée de Colombie"}

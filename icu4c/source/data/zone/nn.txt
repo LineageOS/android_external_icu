@@ -188,8 +188,6 @@ nn{
         }
         "meta:Choibalsan"{
             ld{"sommartid for Tsjojbalsan"}
-            lg{"tidssone for Tsjojbalsan"}
-            ls{"normaltid for Tsjojbalsan"}
         }
         "meta:Cocos"{
             ls{"tidssone for Kokosøyane"}
