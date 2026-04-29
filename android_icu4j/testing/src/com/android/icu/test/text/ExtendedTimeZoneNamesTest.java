@@ -60,6 +60,7 @@ public class ExtendedTimeZoneNamesTest {
     }
 
     @Test
+    @org.junit.Ignore("depends on tzdata")
     public void testMatchName_shouldGuessTimeZoneForLocaleCounty() {
         // Guess the time zone from the locale country.
         assertMatchName(ULocale.CANADA, "Pacific Standard Time", LONDON_TZID,
