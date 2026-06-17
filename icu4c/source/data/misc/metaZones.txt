@@ -93,6 +93,7 @@ metaZones:table(nofallback){
         }
         America_Pacific{
             001{"America/Los_Angeles"}
+            CA{"America/Vancouver"}
             MX{"America/Tijuana"}
         }
         Anadyr{
@@ -2501,11 +2502,16 @@ metaZones:table(nofallback){
             {
                 "America_Pacific",
                 "1970-01-01 00:00",
-                "2026-11-01 09:00",
+                "2100-03-09 07:00",
             }
             {
                 "America_Mountain",
-                "2026-11-01 09:00",
+                "2100-03-09 07:00",
+                "2100-03-10 07:00",
+            }
+            {
+                "America_Pacific",
+                "2100-03-10 07:00",
                 "9999-12-31 23:59",
             }
         }
