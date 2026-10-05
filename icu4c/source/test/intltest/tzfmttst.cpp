@@ -1142,6 +1142,14 @@ TimeZoneFormatTest::TestFormat(void) {
             "Los Angeles",
             UTZFMT_TIME_TYPE_UNKNOWN
         },
+        {
+            "en",
+            "PST8PDT",
+            dateJan,
+            UTZFMT_STYLE_EXEMPLAR_LOCATION,
+            "Unknown City",
+            UTZFMT_TIME_TYPE_UNKNOWN
+        },
 
         {
             "ja",
