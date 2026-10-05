@@ -942,6 +942,14 @@ public class TimeZoneFormatTest extends TestFmwk {
                 TimeType.UNKNOWN
             },
             {
+                "en",
+                "PST8PDT",
+                dateJan,
+                Style.EXEMPLAR_LOCATION,
+                "Unknown City",
+                TimeType.UNKNOWN
+            },
+            {
                 "ja",
                 "Asia/Tokyo",
                 dateJan,
